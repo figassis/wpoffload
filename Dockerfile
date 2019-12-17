@@ -13,4 +13,6 @@ ENV REDIS_PORT 6379
 COPY . /go/src/github.com/figassis/wpoffload
 RUN cd /go/src/github.com/figassis/wpoffload && go mod tidy && go install
 
+VOLUME [ "/data" ]
+
 CMD ["/go/bin/wpoffload"]
