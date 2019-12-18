@@ -9,6 +9,7 @@ ENV PREFIX offload/wp.nellcorp.com
 ENV WATCH /data
 ENV SCHEDULE "* * * * *"
 ENV REDIS_PORT 6379
+ENV ACL "private"
 
 COPY . /go/src/github.com/figassis/wpoffload
 RUN cd /go/src/github.com/figassis/wpoffload && go mod tidy && go install

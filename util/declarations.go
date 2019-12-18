@@ -30,6 +30,7 @@ var (
 	svc          *s3manager.Uploader
 	hostname     string
 	fileQueue    = map[string]bool{}
+	acl          = "private"
 )
 
 type (

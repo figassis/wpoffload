@@ -88,6 +88,7 @@ func saveToS3(filename string, key string) (url string, err error) {
 		Bucket:      aws.String(bucket),
 		Key:         aws.String(key),
 		Body:        file,
+		ACL:         &acl,
 		ContentType: aws.String(http.DetectContentType(fileData)),
 	})
 

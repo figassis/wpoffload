@@ -35,6 +35,11 @@ func Start(wg *sync.WaitGroup) (err error) {
 	if os.Getenv("LOGLEVEL") != "" {
 		logLevel = os.Getenv("LOGLEVEL")
 	}
+
+	if os.Getenv("ACL") == "private" || os.Getenv("ACL") == "public-read" {
+		acl = os.Getenv("ACL")
+	}
+
 	if os.Getenv("AWS_ACCESS_KEY_ID") == "" || os.Getenv("AWS_SECRET_ACCESS_KEY") == "" || os.Getenv("BUCKET") == "" || os.Getenv("AWS_REGION") == "" {
 		return errors.New("Invalid AWS settings")
 	}

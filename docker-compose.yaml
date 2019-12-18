@@ -16,6 +16,7 @@ services:
       SCHEDULE: "* * * * *"
       REDIS_HOST: ${REDIS_HOST}
       REDIS_PORT: ${REDIS_PORT}
+      ACCESS: "private"
     links:
       - cache
     volumes:
