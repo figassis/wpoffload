@@ -33,7 +33,7 @@ func watcher(wg *sync.WaitGroup) {
 		select {
 		// watch for events
 		case event := <-watcher.Events:
-			if strings.Contains(event.Op.String(), "CREATE") {
+			if strings.Contains(event.Op.String(), "CREATE") || strings.Contains(event.Op.String(), "WRITE") || strings.Contains(event.Op.String(), "RENAME") || strings.Contains(event.Op.String(), "CHMOD") {
 				fileQueue[event.Name] = false
 			}
 		case err := <-watcher.Errors:

@@ -1,10 +1,10 @@
 version: "3"
 services:
-  app:
+  offload:
     build: .
     # image: figassis/wpoffload:0.0.1
     restart: always
-    container_name: app
+    container_name: offload
     environment:
       LOGLEVEL: debug
       AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
